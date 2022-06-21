@@ -23,7 +23,7 @@ public class UserDaoHibernateImpl implements UserDao {
                     "`lastName` VARCHAR(45) NOT NULL, " +
                     "`age` INT(3) NOT NULL, PRIMARY KEY (`id`), " +
                     "UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);").executeUpdate();
-            System.out.println("Table 'users' was created successfully");
+            System.out.println("Таблица пользователей создана");
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
