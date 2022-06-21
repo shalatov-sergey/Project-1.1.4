@@ -35,7 +35,7 @@ public class UserDaoHibernateImpl implements UserDao {
         try (Session session = Util.getSessionFactory().openSession()) {
             session.beginTransaction();
             session.createSQLQuery("DROP TABLE IF EXISTS users;").executeUpdate();
-            System.out.println("Table 'users' was deleted successfully");
+            System.out.println("Таблица удалена");
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,7 +51,7 @@ public class UserDaoHibernateImpl implements UserDao {
             user.setLastName(lastName);
             user.setAge(age);
             session.save(user);
-            System.out.println("User " + name + " " + lastName + " was added in DB");
+            System.out.println("Пользователь " + name + " " + lastName + " добавлен");
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,7 +94,7 @@ public class UserDaoHibernateImpl implements UserDao {
         try (Session session = Util.getSessionFactory().openSession()) {
             session.beginTransaction();
             session.createSQLQuery("TRUNCATE users;").executeUpdate();
-            System.out.println("Table 'users' was cleared");
+            System.out.println("Таблица пользователей очищена");
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
