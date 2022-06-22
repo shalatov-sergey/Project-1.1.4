@@ -27,6 +27,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            session.getTransaction().rollback();
         }
     }
 
@@ -39,6 +40,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            session.getTransaction().rollback();
         }
     }
 
@@ -98,6 +100,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            session.getTransaction().rollback();
         }
     }
 }
